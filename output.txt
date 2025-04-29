@@ -1,0 +1,69 @@
+Script started on Mon 09 Dec 2024 03:50:02 PM EST
+]0;hq8682@warrior:~[?1034h[hq8682@warrior ~]$ exitsrun -q secondary -N 1 -n 8 -t 60:0 --pty bash
+srun: job 28589280 queued and waiting for resources
+srun: job 28589280 has been allocated resources
+]0;hq8682@warrior:~[?1034h[hq8682@asx1 ~]$ make
+make: Nothing to be done for 'all'.
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ mpirun -n 8 ./modified_odd_even_sort 65536
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ mpirun -n 8 ./standard_odd_even_sort 65536
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ ./sequential_quicksort 65536
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ mpirun -n 8 ./modified_odd_even_sort 1048576
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ mpirun -n 8 ./standard_odd_even_sort 1048576
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ ./sequential_quicksort 1048576
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ mpirun -n 8 ./modified_odd_even_sort 16777216
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ mpirun -n 8 ./standard_odd_even_sort 16777216
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ ./sequential_quicksort 16777216
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ ls
+[0m[38;5;27mapache-tinkerpop-gremlin-console-3.3.11[0m      [38;5;34mmpi_matrix_add[0m       pthr-example.c.save  [38;5;34msequential_quicksort[0m
+[38;5;9mapache-tinkerpop-gremlin-console-3.3.11.zip[0m  mpi_matrix_add.c     put                  sequential_quicksort.c
+Makefile                                     [38;5;34mmpi_odd_even_sort[0m    result.txt           [38;5;34mstandard_odd_even_sort[0m
+[38;5;34mmatrix_addition[0m                              mpi_odd_even_sort.c  [38;5;34mrun_experiments.sh[0m   standard_odd_even_sort.c
+matrix_addition.cpp                          [38;5;34momp-example[0m          [38;5;34mseq_matrix_add[0m       timing_output.txt
+[38;5;34mmodified_odd_even_sort[0m                       omp-example.c        seq_matrix_add.c
+modified_odd_even_sort.c                     output.txt           seq_result.txt
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ cat timing_output.txt 
+Array size: 65536, Processes: 8, Time: 0.118457 seconds
+Array size: 1048576, Processes: 8, Time: 2.426662 seconds
+Array size: 16777216, Processes: 8, Time: 20.011029 seconds
+Array size: 65536, Processes: 8, Time: 0.016347 seconds
+Array size: 1048576, Processes: 8, Time: 0.532487 seconds
+Array size: 16777216, Processes: 8, Time: 9.107464 seconds
+Array size: 65536, Processes: 8, Time: 0.017251 seconds
+[Modified Odd-Even Sort] Array size: 65536, Processes: 8, Time: 0.013283 seconds
+[Standard Odd-Even Sort] Array size: 65536, Processes: 8, Time: 0.013016 seconds
+[Sequential Quicksort] Array size: 65536, Processes: 1, Time: 0.010000 seconds
+[Modified Odd-Even Sort] Array size: 1048576, Processes: 8, Time: 0.116871 seconds
+[Standard Odd-Even Sort] Array size: 1048576, Processes: 8, Time: 0.225104 seconds
+[Sequential Quicksort] Array size: 1048576, Processes: 1, Time: 0.190000 seconds
+[Modified Odd-Even Sort] Array size: 16777216, Processes: 8, Time: 9.196096 seconds
+[Standard Odd-Even Sort] Array size: 16777216, Processes: 8, Time: 4.613275 seconds
+[Sequential Quicksort] Array size: 16777216, Processes: 1, Time: 3.380000 seconds
+[Modified Odd-Even Sort] Array size: 65536, Processes: 8, Time: 0.022556 seconds
+[Standard Odd-Even Sort] Array size: 65536, Processes: 8, Time: 0.020442 seconds
+[Sequential Quicksort] Array size: 65536, Processes: 1, Time: 0.010000 seconds
+[Modified Odd-Even Sort] Array size: 65536, Processes: 8, Time: 0.012310 seconds
+[Standard Odd-Even Sort] Array size: 65536, Processes: 8, Time: 0.011274 seconds
+[Sequential Quicksort] Array size: 65536, Processes: 1, Time: 0.000000 seconds
+[Modified Odd-Even Sort] Array size: 65536, Processes: 8, Time: 0.013014 seconds
+[Standard Odd-Even Sort] Array size: 65536, Processes: 8, Time: 0.012485 seconds
+[Sequential Quicksort] Array size: 65536, Processes: 1, Time: 0.010000 seconds
+[Modified Odd-Even Sort] Array size: 1048576, Processes: 8, Time: 0.239293 seconds
+[Standard Odd-Even Sort] Array size: 1048576, Processes: 8, Time: 0.243125 seconds
+[Sequential Quicksort] Array size: 1048576, Processes: 1, Time: 0.180000 seconds
+[Modified Odd-Even Sort] Array size: 16777216, Processes: 8, Time: 4.627384 seconds
+[Standard Odd-Even Sort] Array size: 16777216, Processes: 8, Time: 4.534319 seconds
+[Sequential Quicksort] Array size: 16777216, Processes: 1, Time: 3.450000 seconds
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ ls
+[0m[38;5;27mapache-tinkerpop-gremlin-console-3.3.11[0m      [38;5;34mmpi_matrix_add[0m       pthr-example.c.save  [38;5;34msequential_quicksort[0m
+[38;5;9mapache-tinkerpop-gremlin-console-3.3.11.zip[0m  mpi_matrix_add.c     put                  sequential_quicksort.c
+Makefile                                     [38;5;34mmpi_odd_even_sort[0m    result.txt           [38;5;34mstandard_odd_even_sort[0m
+[38;5;34mmatrix_addition[0m                              mpi_odd_even_sort.c  [38;5;34mrun_experiments.sh[0m   standard_odd_even_sort.c
+matrix_addition.cpp                          [38;5;34momp-example[0m          [38;5;34mseq_matrix_add[0m       timing_output.txt
+[38;5;34mmodified_odd_even_sort[0m                       omp-example.c        seq_matrix_add.c
+modified_odd_even_sort.c                     output.txt           seq_result.txt
+]0;hq8682@warrior:~[hq8682@asx1 ~]$ exit
+exit
+]0;hq8682@warrior:~[hq8682@warrior ~]$ exit
+exit
+
+Script done on Mon 09 Dec 2024 03:57:06 PM EST

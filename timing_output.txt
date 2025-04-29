@@ -1,0 +1,9 @@
+[Modified Odd-Even Sort] Array size: 65536, Processes: 8, Time: 0.013283 seconds
+[Standard Odd-Even Sort] Array size: 65536, Processes: 8, Time: 0.013016 seconds
+[Sequential Quicksort] Array size: 65536, Processes: 1, Time: 0.010000 seconds
+[Modified Odd-Even Sort] Array size: 1048576, Processes: 8, Time: 0.116871 seconds
+[Standard Odd-Even Sort] Array size: 1048576, Processes: 8, Time: 0.225104 seconds
+[Sequential Quicksort] Array size: 1048576, Processes: 1, Time: 0.190000 seconds
+[Modified Odd-Even Sort] Array size: 16777216, Processes: 8, Time: 9.196096 seconds
+[Standard Odd-Even Sort] Array size: 16777216, Processes: 8, Time: 4.613275 seconds
+[Sequential Quicksort] Array size: 16777216, Processes: 1, Time: 3.380000 seconds
